@@ -23,6 +23,7 @@ jobs:
     name: tests-${{ matrix.setup.toxenv }}
     continue-on-error: ${{ matrix.setup.experimental }}
     strategy:
+      fail-fast: false
       matrix:
         setup: ${{ fromJson(needs.prep-tests.outputs.matrix) }}
     steps:
